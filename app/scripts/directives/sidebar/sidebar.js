@@ -8,20 +8,20 @@
  */
 
 angular.module('sbAdminApp')
-  .directive('sidebar',['$location',function() {
+  .directive('sidebar',['$location',function($interval) {
     return {
       templateUrl:'scripts/directives/sidebar/sidebar.html',
       restrict: 'E',
       replace: true,
       scope: {
       },
-      controller:function($scope){
+      controller:function($scope, $interval){
         $scope.selectedMenu = 'dashboard';
         $scope.collapseVar = 0;
         $scope.multiCollapseVar = 0;
+        $scope.hosts = [{ip:"192.168.1.1"},{ip:"192.168.1.2"}];
         
         $scope.check = function(x){
-          
           if(x==$scope.collapseVar)
             $scope.collapseVar = 0;
           else
@@ -29,7 +29,6 @@ angular.module('sbAdminApp')
         };
         
         $scope.multiCheck = function(y){
-          
           if(y==$scope.multiCollapseVar)
             $scope.multiCollapseVar = 0;
           else

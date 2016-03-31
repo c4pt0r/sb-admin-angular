@@ -91,13 +91,20 @@ angular
         templateUrl:'views/form.html',
         url:'/form'
     })
-      .state('dashboard.blank',{
-        templateUrl:'views/pages/blank.html',
-        url:'/blank'
-    })
-      .state('login',{
-        templateUrl:'views/pages/login.html',
-        url:'/login'
+      .state('dashboard.host-status',{
+        controller: 'HostStatusCtrl',
+        templateUrl:'views/dashboard/host_status.html',
+        url:'/host-status/:hostName',
+        resolve: {
+          loadMyFile:function($ocLazyLoad) {
+            return $ocLazyLoad.load({
+              name:'sbAdminApp',
+              files:[
+              'scripts/controllers/hostStatusController.js',
+              ]
+            })
+          }
+        }
     })
       .state('dashboard.chart',{
         templateUrl:'views/chart.html',
