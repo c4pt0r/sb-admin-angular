@@ -34,9 +34,7 @@ angular
                     name:'sbAdminApp',
                     files:[
                     'scripts/directives/header/header.js',
-                    'scripts/directives/header/header-notification/header-notification.js',
                     'scripts/directives/sidebar/sidebar.js',
-                    'scripts/directives/sidebar/sidebar-search/sidebar-search.js'
                     ]
                 }),
                 $ocLazyLoad.load(
@@ -84,10 +82,6 @@ angular
               name:'sbAdminApp',
               files:[
               'scripts/controllers/main.js',
-              'scripts/directives/timeline/timeline.js',
-              'scripts/directives/notifications/notifications.js',
-              'scripts/directives/chat/chat.js',
-              'scripts/directives/dashboard/stats/stats.js'
               ]
             })
           }
